@@ -167,11 +167,13 @@ class Predictor:
         print ('Featurizing Data for Predictor')
 
         for i in range(0, df.shape[0]):
-            seq = df['sequences'][i]
+            # seq = df['sequences'][i]
+            seq = df['seq'][i]
+
             X_df.at[i, 'sequence'] = seq
             X_df.at[i, 'feature'] = self.nn_feature(seq)
 
-            Y_df.at[i, 'intensity'] = df['intensity'][i]
+            Y_df.at[i, 'intensity'] = df['log2FC'][i] #df['intensity'][i]
 
         self.X = np.ndarray(shape=(X_df.shape[0], self.__seq_max, self.__fp_bits), dtype=int)
         
