@@ -155,6 +155,8 @@ class Predictor:
 
         self.dict_data:  dict
                          mean and standard deviation of intensity, arginine count, sequence length and charge
+
+                         #NOTE: SHOULD CHANGE.
         '''
 
         print('Loading Data for Training of Predictor')
@@ -179,10 +181,16 @@ class Predictor:
         
         for i in range(0, X_df.shape[0]):
             self.X[i] = X_df.at[i, 'feature']
+
+
+        #NOTE: should alter these for DNA-specific attributes.
+
         
         X_df['charge'] = X_df['sequence'].apply(net_charge)
         X_df['R_count'] = X_df['sequence'].str.count('R')
         X_df['len_seq'] = X_df['sequence'].map(len)
+
+
         
         self.dict_data = {}
         self.dict_data['mean_intensity'] = Y_df['intensity'].mean()

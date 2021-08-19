@@ -7,6 +7,8 @@ def net_charge(sequence):
     Utility function to calculate net charge of a sequence
     Reference: http://www.chem.ucalgary.ca/courses/351/Carey5th/Ch27/ch27-1-4-2.html
 
+#     *EDITED FOR NUCLEOTIDES*
+
     Parameters
     ----------
     sequence:   str
