@@ -175,7 +175,7 @@ class Predictor:
             X_df.at[i, 'sequence'] = seq
             X_df.at[i, 'feature'] = self.nn_feature(seq)
 
-            Y_df.at[i, 'intensity'] = df['log2FC'][i] #df['intensity'][i]
+            Y_df.at[i, 'intensity'] = df['log2FC'][i] #NOTE: changed from df['intensity'][i]
 
         self.X = np.ndarray(shape=(X_df.shape[0], self.__seq_max, self.__fp_bits), dtype=int)
         
@@ -184,12 +184,10 @@ class Predictor:
 
 
         #NOTE: should alter these for DNA-specific attributes.
-
         
         # X_df['charge'] = X_df['sequence'].apply(net_charge)
         # X_df['R_count'] = X_df['sequence'].str.count('R')
         # X_df['len_seq'] = X_df['sequence'].map(len)
-
 
         
         self.dict_data = {}
