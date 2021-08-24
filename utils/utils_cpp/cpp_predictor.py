@@ -186,9 +186,9 @@ class Predictor:
         #NOTE: should alter these for DNA-specific attributes.
 
         
-        X_df['charge'] = X_df['sequence'].apply(net_charge)
-        X_df['R_count'] = X_df['sequence'].str.count('R')
-        X_df['len_seq'] = X_df['sequence'].map(len)
+        # X_df['charge'] = X_df['sequence'].apply(net_charge)
+        # X_df['R_count'] = X_df['sequence'].str.count('R')
+        # X_df['len_seq'] = X_df['sequence'].map(len)
 
 
         
@@ -196,14 +196,14 @@ class Predictor:
         self.dict_data['mean_intensity'] = Y_df['intensity'].mean()
         self.dict_data['std_intensity'] = Y_df['intensity'].std()
         
-        self.dict_data['mean_charge'] = X_df['charge'].mean()
-        self.dict_data['std_charge'] = X_df['charge'].std()
+        # self.dict_data['mean_charge'] = X_df['charge'].mean()
+        # self.dict_data['std_charge'] = X_df['charge'].std()
         
-        self.dict_data['mean_R_count'] = X_df['R_count'].mean()
-        self.dict_data['std_R_count'] = X_df['R_count'].std()
+        # self.dict_data['mean_R_count'] = X_df['R_count'].mean()
+        # self.dict_data['std_R_count'] = X_df['R_count'].std()
         
-        self.dict_data['mean_len_seq'] = X_df['len_seq'].mean()
-        self.dict_data['std_len_seq'] = X_df['len_seq'].std()
+        # self.dict_data['mean_len_seq'] = X_df['len_seq'].mean()
+        # self.dict_data['std_len_seq'] = X_df['len_seq'].std()
 
         scaler = StandardScaler()
         Y_df.fillna(0, inplace=True) #If there are missing values in the Spreadsheet, replacing them with 0.
