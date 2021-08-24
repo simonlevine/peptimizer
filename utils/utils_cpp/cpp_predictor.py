@@ -111,7 +111,7 @@ class Predictor:
         elif 'data_path' in kwargs:
             self.__data_path = kwargs.get('data_path')
             self.model_params = {
-            'epochs': 2,
+            'epochs': 20,
             'batch_size': 10,
             'val_split': 0.2,
             'save_checkpoint': False,
